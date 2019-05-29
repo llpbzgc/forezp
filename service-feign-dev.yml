@@ -1,0 +1,27 @@
+eureka:
+  client:
+    serviceUrl: #eureka的地址
+      defaultZone: http://localhost:8080/eureka/
+
+server:
+  port: 8090
+spring:
+  application:
+    name: service-feign
+  main: #是否运行bean默认重写
+    allow-bean-definition-overriding: true
+
+ribbon:
+  eureka:
+    enabled: true
+
+thymeleaf: #模板
+  suffix: .html
+  prefix: classpath:/templates/
+  enabled: true
+  cache: false
+
+
+feign:
+  hystrix:
+    enabled: true   #打开Feign自带的断路器
